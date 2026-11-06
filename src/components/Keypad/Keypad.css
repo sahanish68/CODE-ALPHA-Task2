@@ -1,0 +1,131 @@
+/* ==========================================================================
+   Keypad Grid & Buttons
+   ========================================================================== */
+.keypad-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.btn {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  border: 1px solid var(--btn-num-border);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 0;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:active, .btn.active-key {
+  transform: scale(0.92);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--text-accent);
+  outline-offset: 2px;
+}
+
+/* Number Buttons */
+.btn-number {
+  background: var(--btn-num-bg);
+  color: var(--btn-num-text);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+}
+
+.btn-number:hover {
+  background: var(--btn-num-hover);
+}
+
+.btn-number:active, .btn-number.active-key {
+  background: var(--btn-num-active);
+}
+
+/* Function Buttons (AC, DEL, %, ±) */
+.btn-function {
+  background: var(--btn-fn-bg);
+  color: var(--btn-fn-text);
+  font-weight: 600;
+  border-color: rgba(244, 63, 94, 0.1);
+}
+
+.btn-function:hover {
+  background: var(--btn-fn-hover);
+}
+
+.btn-function:active, .btn-function.active-key {
+  background: var(--btn-fn-active);
+}
+
+/* Operator Buttons (+, -, ×, ÷) */
+.btn-operator {
+  background: var(--btn-op-bg);
+  color: var(--btn-op-text);
+  font-size: 1.45rem;
+  font-weight: 600;
+  border-color: rgba(99, 102, 241, 0.15);
+}
+
+.btn-operator:hover {
+  background: var(--btn-op-hover);
+}
+
+.btn-operator:active, .btn-operator.active-key {
+  background: var(--btn-op-active);
+}
+
+.btn-operator.selected-op {
+  background: var(--text-accent);
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.5);
+}
+
+/* Equals Button */
+.btn-equals {
+  background: var(--btn-eq-bg);
+  color: var(--btn-eq-text);
+  font-size: 1.5rem;
+  font-weight: 600;
+  box-shadow: var(--btn-eq-shadow);
+  border: none;
+}
+
+.btn-equals:hover {
+  background: var(--btn-eq-hover);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+}
+
+.btn-equals:active, .btn-equals.active-key {
+  transform: scale(0.92);
+}
+
+/* Keyboard Hint Bar */
+.keyboard-hint-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  padding-top: 0.35rem;
+  border-top: 1px solid var(--calculator-border);
+}
+
+.hint-separator {
+  opacity: 0.4;
+}
+
+.keyboard-hint-bar strong {
+  color: var(--text-accent);
+  font-weight: 600;
+}
+

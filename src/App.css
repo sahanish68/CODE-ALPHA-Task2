@@ -1,0 +1,127 @@
+/* ==========================================================================
+   App Container & Pinterest Background Styling
+   ========================================================================== */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Pinterest Pin Background Layer */
+.pinterest-bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image: url('/background.jpg');
+  background-color: #121420;
+  transition: all 0.4s ease;
+}
+
+.app-container.bg-cover .pinterest-bg-layer {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.app-container.bg-pattern .pinterest-bg-layer {
+  background-size: 280px;
+  background-repeat: repeat;
+  background-position: top left;
+}
+
+/* Ambient Tint & Soft Blur Overlay */
+.pinterest-tint-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background: var(--bg-dark-tint);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  pointer-events: none;
+  transition: background 0.4s ease;
+}
+
+/* Background Ambient Orbs */
+.background-decorations {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  animation: floatOrb 14s infinite alternate ease-in-out;
+}
+
+.orb-1 {
+  width: 450px;
+  height: 450px;
+  background: var(--orb-1);
+  top: -100px;
+  left: 10%;
+}
+
+.orb-2 {
+  width: 400px;
+  height: 400px;
+  background: var(--orb-2);
+  bottom: -100px;
+  right: 10%;
+  animation-duration: 18s;
+  animation-delay: -5s;
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, 30px) scale(1.08); }
+  100% { transform: translate(-30px, 50px) scale(0.95); }
+}
+
+/* ==========================================================================
+   Calculator Wrapper & Card
+   ========================================================================== */
+.calculator-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 390px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.calculator-card {
+  background: var(--calculator-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--calculator-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--calculator-shadow);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: box-shadow var(--transition-smooth);
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+@media (max-width: 420px) {
+  .app-container {
+    padding: 0.75rem;
+  }
+  
+  .calculator-card {
+    padding: 1rem;
+    gap: 1rem;
+  }
+}

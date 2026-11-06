@@ -1,0 +1,118 @@
+/* ==========================================================================
+   Design Tokens & CSS Variables
+   ========================================================================== */
+:root {
+  /* Color Palette - Dark Theme (Default) */
+  --bg-dark-tint: rgba(13, 15, 24, 0.78);
+  --calculator-bg: rgba(22, 26, 42, 0.88);
+  --calculator-border: rgba(255, 255, 255, 0.12);
+  --calculator-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.75), 0 0 35px rgba(99, 102, 241, 0.2);
+  
+  --display-bg: rgba(12, 14, 24, 0.85);
+  --display-border: rgba(255, 255, 255, 0.08);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-accent: #818cf8;
+  --live-preview: #38bdf8;
+  
+  /* Keypad Buttons */
+  --btn-num-bg: rgba(255, 255, 255, 0.06);
+  --btn-num-text: #f1f5f9;
+  --btn-num-hover: rgba(255, 255, 255, 0.12);
+  --btn-num-active: rgba(255, 255, 255, 0.18);
+  --btn-num-border: rgba(255, 255, 255, 0.08);
+  
+  --btn-fn-bg: rgba(244, 63, 94, 0.15);
+  --btn-fn-text: #fb7185;
+  --btn-fn-hover: rgba(244, 63, 94, 0.25);
+  --btn-fn-active: rgba(244, 63, 94, 0.35);
+  
+  --btn-op-bg: rgba(99, 102, 241, 0.18);
+  --btn-op-text: #a5b4fc;
+  --btn-op-hover: rgba(99, 102, 241, 0.28);
+  --btn-op-active: rgba(99, 102, 241, 0.42);
+  
+  --btn-eq-bg: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  --btn-eq-text: #ffffff;
+  --btn-eq-shadow: 0 4px 15px rgba(99, 102, 241, 0.45);
+  --btn-eq-hover: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+  
+  --orb-1: rgba(99, 102, 241, 0.25);
+  --orb-2: rgba(236, 72, 153, 0.2);
+
+  --history-bg: rgba(18, 21, 35, 0.96);
+  --history-border: rgba(255, 255, 255, 0.12);
+  --history-card: rgba(255, 255, 255, 0.04);
+  --history-card-hover: rgba(99, 102, 241, 0.18);
+  
+  --radius-lg: 26px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Light Theme Variables */
+[data-theme="light"] {
+  --bg-dark-tint: rgba(240, 244, 250, 0.82);
+  --calculator-bg: rgba(255, 255, 255, 0.9);
+  --calculator-border: rgba(0, 0, 0, 0.08);
+  --calculator-shadow: 0 25px 60px -15px rgba(71, 85, 105, 0.3), 0 0 35px rgba(99, 102, 241, 0.12);
+  
+  --display-bg: rgba(248, 250, 252, 0.95);
+  --display-border: rgba(0, 0, 0, 0.06);
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-accent: #4f46e5;
+  --live-preview: #0284c7;
+  
+  --btn-num-bg: #f8fafc;
+  --btn-num-text: #1e293b;
+  --btn-num-hover: #f1f5f9;
+  --btn-num-active: #e2e8f0;
+  --btn-num-border: rgba(0, 0, 0, 0.08);
+  
+  --btn-fn-bg: #ffe4e6;
+  --btn-fn-text: #e11d48;
+  --btn-fn-hover: #fecdd3;
+  --btn-fn-active: #fda4af;
+  
+  --btn-op-bg: #e0e7ff;
+  --btn-op-text: #4338ca;
+  --btn-op-hover: #c7d2fe;
+  --btn-op-active: #a5b4fc;
+  
+  --btn-eq-bg: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  --btn-eq-text: #ffffff;
+  --btn-eq-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
+  --btn-eq-hover: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+  
+  --orb-1: rgba(99, 102, 241, 0.15);
+  --orb-2: rgba(236, 72, 153, 0.12);
+
+  --history-bg: rgba(255, 255, 255, 0.98);
+  --history-border: rgba(0, 0, 0, 0.1);
+  --history-card: rgba(0, 0, 0, 0.03);
+  --history-card-hover: rgba(99, 102, 241, 0.08);
+}
+
+/* ==========================================================================
+   Base & Reset
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  min-height: 100vh;
+  color: var(--text-main);
+  position: relative;
+  overflow-x: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  background: #0f111a;
+}
+

@@ -1,0 +1,75 @@
+/* ==========================================================================
+   Header / Toolbar Styling
+   ========================================================================== */
+.calc-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+}
+
+.app-branding {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-badge {
+  background: var(--btn-op-bg);
+  color: var(--text-accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  border: 1px solid var(--calculator-border);
+}
+
+.brand-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: -0.01em;
+}
+
+.toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.icon-btn {
+  background: var(--btn-num-bg);
+  border: 1px solid var(--calculator-border);
+  color: var(--text-main);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: 1rem;
+}
+
+.icon-btn:hover {
+  background: var(--btn-num-hover);
+  transform: translateY(-1px);
+}
+
+.icon-btn:active {
+  transform: scale(0.92);
+}
+
+.icon-btn.active {
+  background: var(--btn-op-bg);
+  color: var(--text-accent);
+  border-color: var(--text-accent);
+}
+
+.icon-btn.muted .sound-icon {
+  opacity: 0.4;
+  filter: grayscale(1);
+}
+
